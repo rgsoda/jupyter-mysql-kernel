@@ -29,6 +29,7 @@ class install_with_kernelspec(install):
 			# TODO: Copy resources once they're specified
 
 			log.info('Installing IPython kernel spec')
+                        print(self.user)
 			install_kernel_spec(td, 'jupyter-mysql-kernel', user=self.user, replace=True)
 
 with open('README.md','r') as f:
