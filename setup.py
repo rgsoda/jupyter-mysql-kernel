@@ -28,8 +28,7 @@ class install_with_kernelspec(install):
             with open(os.path.join(td, "kernel.json"), "w") as f:
                 json.dump(kernel_json, f, sort_keys=True)
             log.info("Installing IPython kernel spec")
-            print(self.user)
-            install_kernel_spec(td, "jupyter-mysql-kernel", user=self.user, replace=True)
+            install_kernel_spec(td, "jupyter-mysql-kernel", user=os.getuid(), replace=True)
 
 
 with open("README.md", "r") as f:
